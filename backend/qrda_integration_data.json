@@ -1,0 +1,184 @@
+{
+  "status": "success",
+  "system": "QRDA Enterprise Portal Integration",
+  "employee_directory": {
+    "total_count": 5,
+    "onboarded_count": 4,
+    "employees": [
+      {
+        "oid": "112",
+        "empCode": "68448",
+        "name": "Dinesh Jagtap",
+        "client": "Tata Communications",
+        "branch": "Mumbai",
+        "site": "TCL BKC",
+        "skillDesig": "S/SUP",
+        "clientDesig": "S/SUP",
+        "email": "dinesh.jagtap@tatacomm.com",
+        "mobile": "9874561221",
+        "weeklyOff": "SAT",
+        "joinedOn": "19-Apr-1997",
+        "releavedOn": "30-Jun-2023",
+        "onBoard": false
+      },
+      {
+        "oid": "113",
+        "empCode": "67828",
+        "name": "Sandeep Utekar",
+        "client": "Tata Communications",
+        "branch": "Mumbai",
+        "site": "TCL VSB",
+        "skillDesig": "S/SUP",
+        "clientDesig": "S/SUP",
+        "email": "sandeep.utekar@tatacomm.com",
+        "mobile": "9152654401",
+        "weeklyOff": "SUN",
+        "joinedOn": "19-Apr-1997",
+        "releavedOn": "",
+        "onBoard": true
+      },
+      {
+        "oid": "114",
+        "empCode": "68351",
+        "name": "Amardeep Gawhande",
+        "client": "Tata Communications",
+        "branch": "Mumbai",
+        "site": "TCL BKC",
+        "skillDesig": "S/G",
+        "clientDesig": "S/G",
+        "email": "amardeep.g@tatacomm.com",
+        "mobile": "8369597035",
+        "weeklyOff": "SAT",
+        "joinedOn": "19-Apr-1997",
+        "releavedOn": "",
+        "onBoard": true
+      },
+      {
+        "oid": "121",
+        "empCode": "70112",
+        "name": "Vikas Sharma",
+        "client": "Wipro",
+        "branch": "Pune",
+        "site": "WIPRO PDC - II",
+        "skillDesig": "ASM",
+        "clientDesig": "ASM",
+        "email": "vikas.sharma@wipro.com",
+        "mobile": "9822011445",
+        "weeklyOff": "SUN",
+        "joinedOn": "01-Jan-2015",
+        "releavedOn": "",
+        "onBoard": true
+      },
+      {
+        "oid": "122",
+        "empCode": "70245",
+        "name": "Mahesh Kadam",
+        "client": "Wipro",
+        "branch": "Pune",
+        "site": "WIPRO PDC - II",
+        "skillDesig": "S/G",
+        "clientDesig": "S/G",
+        "email": "mahesh.kadam@wipro.com",
+        "mobile": "9765432109",
+        "weeklyOff": "SUN",
+        "joinedOn": "12-Mar-2018",
+        "releavedOn": "",
+        "onBoard": true
+      }
+    ]
+  },
+  "standard_deployment": {
+    "wipro_pue": {
+      "client": "Wipro",
+      "branch": "Pune",
+      "site": "WIPRO PDC - II",
+      "rows": [
+        {
+          "designation": "ASM",
+          "required": 1,
+          "onboard": 1,
+          "shortfall": 0,
+          "monFri": 1,
+          "sat": 1,
+          "sun": 0
+        },
+        {
+          "designation": "S/G",
+          "required": 131,
+          "onboard": 1,
+          "shortfall": -130,
+          "monFri": 116,
+          "sat": 40,
+          "sun": 76
+        },
+        {
+          "designation": "S/SUP",
+          "required": 5,
+          "onboard": 0,
+          "shortfall": -5,
+          "monFri": 3,
+          "sat": 3,
+          "sun": 3
+        },
+        {
+          "designation": "S/OFF",
+          "required": 4,
+          "onboard": 0,
+          "shortfall": -4,
+          "monFri": 3,
+          "sat": 2,
+          "sun": 2
+        }
+      ],
+      "total_required": 141,
+      "total_onboard": 2,
+      "total_shortfall": -139
+    },
+    "tata_bkc": {
+      "client": "Tata Communications",
+      "branch": "Mumbai",
+      "site": "TCL BKC",
+      "rows": [
+        {
+          "designation": "ASM",
+          "required": 2,
+          "onboard": 0,
+          "shortfall": -2,
+          "monFri": 2,
+          "sat": 1,
+          "sun": 1
+        },
+        {
+          "designation": "S/G",
+          "required": 45,
+          "onboard": 1,
+          "shortfall": -44,
+          "monFri": 40,
+          "sat": 20,
+          "sun": 15
+        },
+        {
+          "designation": "S/SUP",
+          "required": 4,
+          "onboard": 0,
+          "shortfall": -4,
+          "monFri": 3,
+          "sat": 2,
+          "sun": 2
+        },
+        {
+          "designation": "L/SG",
+          "required": 12,
+          "onboard": 0,
+          "shortfall": -12,
+          "monFri": 8,
+          "sat": 4,
+          "sun": 4
+        }
+      ],
+      "total_required": 63,
+      "total_onboard": 1,
+      "total_shortfall": -62
+    }
+  }
+}

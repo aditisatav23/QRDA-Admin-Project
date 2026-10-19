@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QRDA Enterprise Widget - Frontend Integration Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-app: #0b1020;
+      --bg-card: #111827;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: #1e293b;
+      --btn-primary: #0ea5e9;
+      --btn-primary-hover: #0284c7;
+      --table-header-bg: #1e293b;
+      --table-header-text: #cbd5e1;
+    }
+
+    [data-theme="light"] {
+      --bg-app: #f4f7fa;
+      --bg-card: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --btn-primary: #1690ed;
+      --btn-primary-hover: #0284c7;
+      --table-header-bg: #f8fafc;
+      --table-header-text: #0f172a;
+    }
+
+    body {
+      margin: 0;
+      padding: 32px;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-app);
+      color: var(--text-main);
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .demo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto 24px auto;
+    }
+
+    .demo-title {
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .demo-theme-btn {
+      background: var(--table-header-bg);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .demo-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-header">
+    <div>
+      <div class="demo-title">🛡️ QRDA Embeddable Widget Demo</div>
+      <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">
+        Theme-synced embeddable deployment roster widget
+      </div>
+    </div>
+    <button className="demo-theme-btn" id="theme-toggle">🌓 Toggle Dark/Light Mode</button>
+  </div>
+
+  <div className="demo-container">
+    <div id="qrda-widget-container"></div>
+  </div>
+
+  <!-- Load updated JS file -->
+  <script src="/qrda_frontend_integration.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mount QRDA Widget
+      QRDAWidget.mount('#qrda-widget-container', {
+        apiBaseUrl: 'http://localhost:8001',
+        siteName: 'TCL BKC'
+      });
+
+      // Theme toggle functionality
+      const toggleBtn = document.getElementById('theme-toggle');
+      toggleBtn.addEventListener('click', () => {
+        const html = document.documentElement;
+        const current = html.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+      });
+    });
+  </script>
+</body>
+</html>

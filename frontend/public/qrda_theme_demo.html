@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QRDA Design System & Theme Integration Demo</title>
+</head>
+<body class="qrda-ds-body" style="margin: 0; padding: 32px;">
+
+  <!-- Header Banner -->
+  <div class="qrda-banner" style="max-width: 1100px; margin: 0 auto 28px auto;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <div>
+        <h1 style="font-size: 24px; font-weight: 800; margin: 0;">🛡️ QRDA Enterprise Design System</h1>
+        <p style="font-size: 13px; opacity: 0.8; margin-top: 6px;">
+          Unified Light/Dark themes, Plus Jakarta Sans typography, high-contrast analytics cards, and tables.
+        </p>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <button class="qrda-btn qrda-btn-primary" id="btn-theme-toggle">🌓 Toggle Dark/Light Mode</button>
+        <button class="qrda-btn qrda-btn-emerald" id="btn-toast-demo">🔔 Trigger Toast Notification</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Grid -->
+  <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px;">
+
+    <!-- KPI Widgets Grid -->
+    <div class="qrda-kpi-grid">
+      <div class="qrda-kpi-card">
+        <div class="qrda-kpi-lbl">Total Workforce</div>
+        <div class="qrda-kpi-val">10,277</div>
+        <div style="font-size: 11px; color: var(--qrda-emerald); margin-top: 4px; font-weight: 700;">+4.2% active sync</div>
+      </div>
+      <div class="qrda-kpi-card">
+        <div class="qrda-kpi-lbl">Active Sites</div>
+        <div class="qrda-kpi-val">239 Sites</div>
+        <div style="font-size: 11px; color: var(--qrda-text-sub); margin-top: 4px; font-weight: 600;">193 Onboarded</div>
+      </div>
+      <div class="qrda-kpi-card">
+        <div class="qrda-kpi-lbl">Patrol Compliance</div>
+        <div class="qrda-kpi-val">98.4%</div>
+        <div style="font-size: 11px; color: var(--qrda-emerald); margin-top: 4px; font-weight: 700;">1,420 Reviewed</div>
+      </div>
+      <div class="qrda-kpi-card">
+        <div class="qrda-kpi-lbl">Active Alerts</div>
+        <div class="qrda-kpi-val" style="color: var(--qrda-rose);">2 SOS</div>
+        <div style="font-size: 11px; color: var(--qrda-text-sub); margin-top: 4px; font-weight: 600;">0 Missed Checkpoints</div>
+      </div>
+    </div>
+
+    <!-- Data Table Container -->
+    <div class="qrda-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <h3 style="font-size: 16px; font-weight: 800; margin: 0;">Standard Deployment Matrix (Live Sync)</h3>
+        <span class="qrda-badge qrda-badge-info">TCL BKC Site</span>
+      </div>
+
+      <div class="qrda-table-wrap">
+        <table class="qrda-table">
+          <thead>
+            <tr>
+              <th>Designation</th>
+              <th>Required</th>
+              <th>Onboard</th>
+              <th>Shortfall</th>
+              <th>Mon–Fri</th>
+              <th>Sat</th>
+              <th>Sun</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ASM</strong> (Area Security Manager)</td>
+              <td>2</td>
+              <td>2</td>
+              <td>0</td>
+              <td>2</td>
+              <td>1</td>
+              <td>1</td>
+              <td><span class="qrda-badge qrda-badge-success">Optimal</span></td>
+            </tr>
+            <tr>
+              <td><strong>S/G</strong> (Security Guard)</td>
+              <td>45</td>
+              <td>42</td>
+              <td style="color: var(--qrda-rose); font-weight: 800;">-3</td>
+              <td>40</td>
+              <td>20</td>
+              <td>15</td>
+              <td><span class="qrda-badge qrda-badge-warning">Shortfall</span></td>
+            </tr>
+            <tr>
+              <td><strong>S/SUP</strong> (Senior Supervisor)</td>
+              <td>4</td>
+              <td>4</td>
+              <td>0</td>
+              <td>3</td>
+              <td>2</td>
+              <td>2</td>
+              <td><span class="qrda-badge qrda-badge-success">Optimal</span></td>
+            </tr>
+            <tr>
+              <td><strong>L/SG</strong> (Lady Security Guard)</td>
+              <td>12</td>
+              <td>1</td>
+              <td style="color: var(--qrda-rose); font-weight: 800;">-11</td>
+              <td>8</td>
+              <td>4</td>
+              <td>4</td>
+              <td><span class="qrda-badge qrda-badge-warning">Action Required</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Load single-file Design System Script -->
+  <script src="/qrda_design_system.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Design System
+      QRDADesignSystem.init({ defaultTheme: 'dark' });
+
+      // Theme toggle event
+      document.getElementById('btn-theme-toggle').addEventListener('click', () => {
+        QRDADesignSystem.toggleTheme();
+      });
+
+      // Toast demo event
+      document.getElementById('btn-toast-demo').addEventListener('click', () => {
+        QRDADesignSystem.showToast('Design system tokens synchronized successfully!', 'success');
+      });
+    });
+  </script>
+
+</body>
+</html>
